@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conceptos Básicos de Marca Personal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .slide-container {
+            width: 80%;
+            max-width: 800px;
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .slide {
+            display: none;
+        }
+        .active {
+            display: block;
+        }
+        .navigation {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 0 5px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="slide active" id="slide1">
+            <h2>Conceptos Básicos de Marca Personal</h2>
+            <p>Bienvenidos a la primera lección sobre la construcción de una marca personal. Exploraremos los conceptos clave que definen la marca personal y por qué es crucial para cualquier emprendedor digital.</p>
+        </div>
+        <div class="slide" id="slide2">
+            <h2>¿Qué es la Marca Personal?</h2>
+            <p>La marca personal es la percepción que otros tienen sobre ti, basada en tus acciones, mensajes y la imagen que proyectas. Se trata de transmitir un mensaje coherente y auténtico al público, alineado con tus valores y tu propósito.</p>
+        </div>
+        <div class="slide" id="slide3">
+            <h2>¿Por qué es importante la Marca Personal?</h2>
+            <ul>
+                <li><strong>Diferenciación:</strong> Te permite destacarte en un mercado competitivo.</li>
+                <li><strong>Conexión:</strong> Construye relaciones significativas y confianza con tu audiencia.</li>
+                <li><strong>Credibilidad:</strong> Te posiciona como un experto en tu nicho o industria.</li>
+            </ul>
+        </div>
+        <div class="slide" id="slide4">
+            <h2>Elementos Fundamentales de la Marca Personal</h2>
+            <ul>
+                <li><strong>Valores y Creencias:</strong> Define lo que te motiva y te inspira.</li>
+                <li><strong>Propósito y Objetivo:</strong> Establece qué deseas lograr y cómo quieres impactar a los demás.</li>
+                <li><strong>Imagen:</strong> Cómo te presentas (visualmente y verbalmente).</li>
+                <li><strong>Historia Personal:</strong> Los eventos y experiencias que te han formado.</li>
+            </ul>
+        </div>
+        <div class="slide" id="slide5">
+            <h2>Ejemplos de Marca Personal en Acción</h2>
+            <p>Un entrenador de vida que comparte sus aprendizajes diarios y experiencias personales. Un creador de contenido digital que se enfoca en enseñar estrategias de negocio, utilizando un estilo visual consistente y un tono amigable.</p>
+        </div>
+        <div class="slide" id="slide6">
+            <h2>Resumen de la Lección</h2>
+            <p>La marca personal es una extensión de quién eres y cómo te perciben los demás. Es crucial tener claridad sobre tus valores y tu propósito para construir una conexión genuina con tu audiencia.</p>
+            <p>En las próximas lecciones, exploraremos cómo definir cada uno de estos elementos y ponerlos en práctica.</p>
+        </div>
+        <div class="navigation">
+            <button onclick="prevSlide()">Anterior</button>
+            <button onclick="nextSlide()">Siguiente</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+    </script>
+</body>
+</html>
